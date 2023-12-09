@@ -1,0 +1,123 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+    color: #00fffc;
+    border: 0.5px solid #00fffc;
+}
+
+.btn ::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00fffc, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.btn:hover::before {
+    transform: translateX(100%);
+}
+
+.btn:hover {
+    background: transparent;
+    box-shadow: 0 0 20px 10px rgba(23, 202, 229, 0.5);
+}
+
+.form-input-material {
+    --input-default-border-color: white;
+    --input-border-bottom-color: white;
+}
+
+label {
+    color: white;
+    padding: 0 0 0 0;
+}
+
+.form-input-material {
+    position: relative;
+    width: 300px;
+}
+
+.form-control-required {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-control-required:focus {
+    border-color: #3498db;
+}
+
+.input-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 16px;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.form-control-required:focus+.input-label,
+.form-control-required:not(:placeholder-shown)+.input-label {
+    transform: translateY(-80%) scale(0.8);
+    color: #3498db;
+}
+
+.form-input-material input {
+    color: white;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid #00fffc 0.01rem;
+}
+
+.login-form {
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 40px;
+    color: white;
+    box-shadow: 0 0.4px 0.4px rgba(255, 255, 255, 0.5),
+        0 1px 1px rgba(255, 255, 255, 0.5),
+        0 2.1px 2.1px rgba(255, 255, 255, 0.5),
+        0 4.4px 4.4px rgba(255, 255, 255, 0.5),
+        0 12px 12px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.login-form h1 {
+    margin: 0 0 24px 0;
+}
+
+.login-form .form-input-material {
+    margin: 12px 0;
+}
+
+.login-form .btn {
+    width: 100%;
+    margin: 18px 0 9px 0;
+}
